@@ -26,10 +26,16 @@ public class Fraction {
     * @param numr
     * @param denr
     */
+    
+    public Fraction(){
+        numerator = 0;
+	denominator = 0;
+    }
+    
     public Fraction(int numr, int denr) {
 	numerator = numr;
 	denominator = denr;
-	//reduce();
+	reduce();
     }
  
     public int getNumerator() {
@@ -46,6 +52,22 @@ public class Fraction {
  
     public void setDenominator(int denominator) {
 	this.denominator = denominator;
+    }
+    
+    public int calculateGCD(int numerator, int denominator) {
+	if (numerator % denominator == 0) {
+             return denominator;
+        }
+	return calculateGCD(denominator, numerator % denominator);
+	}
+ 
+    /**
+    * Reduce the fraction to lowest form
+    */
+    void reduce() {
+	int gcd = calculateGCD(numerator, denominator);
+	numerator /= gcd;
+	denominator /= gcd;
     }
     
     public static void main(String[] args) {
