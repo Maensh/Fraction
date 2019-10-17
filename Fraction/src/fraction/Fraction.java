@@ -23,8 +23,6 @@ public class Fraction {
     /**
     * Constructor
     * 
-    * @param numr
-    * @param denr
     */
     
     public Fraction(){
@@ -125,14 +123,26 @@ public class Fraction {
  
     /**
     * Returns string representation of the fraction
-    */
-    @Override
-    public String toString() {
+     * @return 
+    */   
+    public String fractionAsString() {
 	return this.numerator + "/" + this.denominator;
     }
     
     public static void main(String[] args) {
         // TODO code application logic here
+        Fraction f1 = new Fraction(25, 35);
+	System.out.println("F1 = " + f1.fractionAsString());
+	Fraction f2 = new Fraction(2, 7);
+        System.out.println("F2 = " + f2.fractionAsString());
+	Fraction f3 = f1.add(f2);
+	System.out.println("F1 + F2 = " + f3.fractionAsString());
+	f3 = f1.subtract(f2);
+	System.out.println("F1 - F2 = " + f3.fractionAsString());
+	f3 = f1.divide(f2);
+	System.out.println("F1 / F2 = " + f3.fractionAsString());
+	f3 = f1.multiply(f2);
+	System.out.println("F1 * F2 = " + f3.fractionAsString());
     }
     
 }
