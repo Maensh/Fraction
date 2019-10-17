@@ -10,6 +10,7 @@ package fraction;
  * @author Maen
  */
 //Fraction Class
+//try it
 public class Fraction {
 
     /**
