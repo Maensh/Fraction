@@ -70,6 +70,67 @@ public class Fraction {
 	denominator /= gcd;
     }
     
+     /**
+    * Adds two fractions
+    * 
+    * @param fractionTwo
+    * @return
+    */
+    public Fraction add(Fraction fractionTwo) {
+	int numer = (numerator * fractionTwo.getDenominator()) + 
+                            (fractionTwo.getNumerator() * denominator);
+	int denr = denominator * fractionTwo.getDenominator();
+	return new Fraction(numer, denr);
+    }
+ 
+    /**
+    * Subtracts two fractions
+    * 
+    * @param fractionTwo
+    * @return
+    */
+    public Fraction subtract(Fraction fractionTwo) {
+        int newNumerator = (numerator * fractionTwo.denominator) - 
+                                 (fractionTwo.numerator * denominator);
+	int newDenominator = denominator * fractionTwo.denominator;
+	Fraction result = new Fraction(newNumerator, newDenominator);
+	return result;
+    }
+ 
+    /**
+    * Multiples two functions
+    * 
+    * @param fractionTwo
+    * @return
+    */
+    public Fraction multiply(Fraction fractionTwo) {
+	int newNumerator = numerator * fractionTwo.numerator;
+	int newDenominator = denominator * fractionTwo.denominator;
+	Fraction result = new Fraction(newNumerator, newDenominator);
+	return result;
+    }
+ 
+    /**
+    * Divides two fractions
+    * 
+    * @param fractionTwo
+    * @return
+    */
+    public Fraction divide(Fraction fractionTwo) {
+	int newNumerator = numerator * fractionTwo.getDenominator();
+	int newDenominator = denominator * fractionTwo.numerator;
+	Fraction result = new Fraction(newNumerator, newDenominator);
+	return result;
+    }
+ 
+    /**
+    * Returns string representation of the fraction
+    */
+    @Override
+    public String toString() {
+	return this.numerator + "/" + this.denominator;
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
